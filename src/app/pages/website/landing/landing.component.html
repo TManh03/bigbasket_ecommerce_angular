@@ -5,10 +5,8 @@
           class="textBlur">bigBasket</span></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <!--Toggle  -->
         <span class="navbar-toggler-icon"></span>
       </button>
-      <!-- Nav Items -->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0  text-center ">
           <li class="nav-item dropdown">
@@ -21,7 +19,6 @@
                 <a class="dropdown-item hand" (mouseover)="loadSubcategories(category)">
                   {{ category.categoryName }}
                 </a>
-                <!-- Nested dropdown for subcategories -->
                 <ul class="dropdown-menu sub-menu" *ngIf="category.subcategories && category.subcategories.length > 0">
                   <li *ngFor="let subcategory of category.subcategories"
                     (click)="navigateToProducts(subcategory.categoryId)">
@@ -49,7 +46,6 @@
           <li class="nav-item">
             <a class="nav-link"><i class="fa-solid fa-magnifying-glass fs-5" style="color: #0c0d0d;"></i></a>
           </li>
-          <!-- cart -->
           <ng-container *ngIf="loggedInObj?.custId">
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" id="navbarDropdown3" role="button" data-bs-toggle="dropdown"
@@ -154,7 +150,6 @@
   </nav>
 </header>
 
-<!-- login modal starts -->
 <div class="row">
   <div class="col-md-12">
     <form #loginFrm="ngForm">
@@ -207,9 +202,7 @@
     </form>
   </div>
 </div>
-<!-- login modal ends -->
 
-<!-- register modal starts -->
 <div class="row">
   <div class="col-md-12">
     <form #registerFrm="ngForm">
@@ -264,9 +257,7 @@
     </form>
   </div>
 </div>
-<!-- register modal ends -->
 
-<!-- customer profile modal starts -->
 <div class="row">
   <div class="col-md-12">
     <form #profileFrm="ngForm">
@@ -323,7 +314,6 @@
     </form>
   </div>
 </div>
-<!-- customer profile modal ends -->
 <div class="content">
   <router-outlet></router-outlet>
 </div>
